@@ -1,31 +1,31 @@
 {
-	"name": "music-js",
-    "description": "HTML5 Audio API music visualizer for JavaScript",
-    "keywords": [
-        "music",
-        "visualizer",
-        "audio",
-        "player"
-    ],
-    "author": "Patrick Roberts",
-    "main": "./app",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/patrickroberts/music-js.git"
-    },
-	"engines": {
-		"npm": "2.0.0",
-		"node": "0.10.35"
-	},
-	"dependencies": {
-		"express": "4.10.6",
-        "serve-favicon": "2.2.0"
-	},
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/patrickroberts/music-js/raw/master/LICENSE"
-        }
-    ]
+  "name": "music-js",
+  "description": "HTML5 Audio API music visualizer for JavaScript",
+  "keywords": [
+    "music",
+    "visualizer",
+    "audio",
+    "player"
+  ],
+  "author": "Patrick Roberts",
+  "main": "./app",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickroberts/music-js.git"
+  },
+  "engines": {
+    "npm": "2.0.0",
+    "node": "0.10.35"
+  },
+  "dependencies": {
+    "express": "4.10.6",
+    "serve-favicon": "2.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/patrickroberts/music-js/issues"
+  },
+  "homepage": "https://github.com/patrickroberts/music-js",
+  "devDependencies": {},
+  "license": "MIT"
 }
