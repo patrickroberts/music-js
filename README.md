@@ -15,9 +15,18 @@ of customizable attributes.
 To install this server, run
 
 ```
-npm install music-js
-cd music-js/
+git clone https://github.com/patrickroberts/music-js.git
+cd music-js/static/
+mkdir media
+```
+
+At this point you should add songs to the ``media`` directory and edit the
+JSON in ``index.html`` to include the songs you want to visualize. After
+that, return to the terminal or command prompt and run
+
+```
+cd ..
 node app.js
 ```
 
-and open <http://localhost:8080>.
+then open <http://localhost:8080>.
