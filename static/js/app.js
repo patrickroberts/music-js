@@ -291,7 +291,7 @@
         }
 
         function seekMousemove(event) {
-            var percent = (seekbtn.offsetLeft + 0.5) / (seekbar.offsetWidth - seekbtn.offsetWidth);
+            var percent = (seekbtn.offsetLeft + 1) / (seekbar.offsetWidth - seekbtn.offsetWidth);
 
             updateRange(0, (seekbtn.offsetLeft + seekbtn.offsetWidth / 2) / seekbar.clientWidth, seekinner, played);
 
