@@ -26,6 +26,7 @@ that, return to the terminal or command prompt and run
 
 ```
 cd ..
+npm install
 node app.js
 ```
 
