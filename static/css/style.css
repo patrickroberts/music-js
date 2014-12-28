@@ -1,0 +1,185 @@
+.music {
+    position: relative;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.music .audio {
+    position: absolute;
+    padding: 5px 15px 5px 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #333;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #F8F8F8;
+    pointer-events: all;
+}
+
+.music .audio, .music .audio * {
+    cursor: default;
+}
+
+.music .audio > div {
+    position: relative;
+    float: left;
+    display: inline-block;
+}
+
+.music .audio .back {
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.music .audio .toggle {
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.music .audio .skip {
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.music .audio .seekbar {
+    margin: 6px 10px;
+    width: 100px;
+    height: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #888;
+    background-color: #222;
+}
+
+.music .audio .innerbar {
+    left: -1px;
+    right: 0;
+    top: -1px;
+    height: 8px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+}
+
+.music .audio .played {
+    position: absolute;
+    height: 8px;
+    left: 0;
+    background-color: #CCC;
+}
+
+.music .audio .buffered {
+    position: absolute;
+    top: 1px;
+    height: 6px;
+    background-color: #444;
+}
+
+.music .audio .seekbtn {
+    position: absolute;
+    width: 18px;
+    height: 10px;
+    top: -3px;
+    left: -1px;
+    border: 1px solid #F8F8F8;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+    cursor: pointer;
+}
+
+.music .audio .time {
+    font-size: 13px;
+    margin: 2px 4px 2px 0;
+}
+
+.music .audio .speaker {
+    margin-left: 4px;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.music .audio .volbar {
+    margin: 6px 0 6px 10px;
+    width: 45px;
+    height: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #888;
+    background-color: #222;
+}
+
+.music .audio .volume {
+    position: absolute;
+    height: 8px;
+    left: 0;
+    width: 100%;
+    background-color: #CCC;
+}
+
+.music .audio .volbtn {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -3px;
+    left: calc(100% - 11px);
+    border: 1px solid #F8F8F8;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+    cursor: pointer;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin: 3px;
+    vertical-align: text-top;
+    background-image: url(/img/glyphicons.png);
+    background-repeat: no-repeat;
+}
+
+.icon-play {
+    background-position: -264px -72px;
+}
+
+.icon-pause {
+    background-position: -288px -72px;
+}
+
+.icon-step-backward {
+    background-position: -216px -72px;
+}
+
+.icon-step-forward {
+    background-position: -360px -72px;
+}
+
+.icon-volume-up {
+    background-position: -408px -24px;
+}
+
+.icon-volume-down {
+    background-position: -384px -24px;
+}
+
+.icon-volume-off {
+    background-position: -360px -24px;
+}

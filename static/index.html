@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Audio Demo</title>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="/js/app.js">
+        {
+            "autoplay": true,
+            "volume": 1,
+            "size": 1024,
+            "smoothing": 0.6,
+            "mindecibels": -50,
+            "maxdecibels": -15,
+            "frame": 30,
+            "container": "position:relative;background-color:#000;width:100%;height:100%",
+            "controls": "position:absolute;left:0;bottom:0",
+            "title": "position:absolute;right:0;bottom:0;padding:10px;color:#FFF;font-size:16px;font-family:\"Average Sans\"",
+            "effects": [
+                {
+                    "type": "fft",
+                    "position": "horizontalmirror",
+                    "colors": [
+                        "#0FF",
+                        "#0BB",
+                        "#088",
+                        "#044"
+                    ],
+                    "size": 4,
+                    "style": "position:absolute;bottom:0;left:0;width:100%;height:30%"
+                },
+                {
+                    "type": "waveform",
+                    "position": "horizontal",
+                    "color": "#F00",
+                    "size": 3,
+                    "style": "position:absolute;top:15%;left:0;width:100%;height:30%"
+                }
+            ],
+            "audio": [
+                {
+                    "mp3": "/media/the_traveler.mp3",
+                    "ogg": "/media/the_traveler.ogg",
+                    "webm": "/media/the_traveler.webm",
+                    "title": "Kezwik - The Traveler"
+                },
+                {
+                    "mp3": "/media/namaste_alivida.mp3",
+                    "ogg": "/media/namaste_alivida.ogg",
+                    "webm": "/media/namaste_alivida.webm",
+                    "title": "MitiS - Namaste, Alivida"
+                },
+                {
+                    "mp3": "/media/on_my_way.mp3",
+                    "ogg": "/media/on_my_way.ogg",
+                    "webm": "/media/on_my_way.webm",
+                    "title": "Party Ghost - On My Way"
+                },
+                {
+                    "mp3": "/media/frozen_rivers.mp3",
+                    "ogg": "/media/frozen_rivers.ogg",
+                    "webm": "/media/frozen_rivers.webm",
+                    "title": "Soulfy - Frozen Rivers"
+                },
+                {
+                    "mp3": "/media/never_forget.mp3",
+                    "ogg": "/media/never_forget.ogg",
+                    "webm": "/media/never_forget.webm",
+                    "title": "Urbanstep - Never Forget"
+                },
+                {
+                    "mp3": "/media/no_words.mp3",
+                    "ogg": "/media/no_words.ogg",
+                    "webm": "/media/no_words.webm",
+                    "title": "SubVibe & Tide - No Words"
+                }
+            ]
+        }
+        </script>
+    </body>
+</html>
