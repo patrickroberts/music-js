@@ -301,7 +301,7 @@
         }
 
         function volumeMousemove(event) {
-            var percent = (volbtn.offsetLeft + 0.5) / (volbar.offsetWidth - volbtn.offsetWidth);
+            var percent = (volbtn.offsetLeft + 1) / (volbar.offsetWidth - volbtn.offsetWidth);
 
             updateRange(0, (volbtn.offsetLeft + volbtn.offsetWidth / 2) / volbar.clientWidth, volinner, volume);
             
