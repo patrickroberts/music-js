@@ -42,6 +42,10 @@
         }
     }
 
+    function inReverse(a, b) {
+        return b.localeCompare(a);
+    }
+
     function AudioAnalyser() {
         this.audio = new Audio();
         this.canplay = false;
@@ -123,6 +127,7 @@
 
         audio.pause();
         Array.prototype.slice.call(audio.children).forEach(remove);
+        props.sort(inReverse);
 
         for(i = 0; i < props.length; i++) {
             prop = props[i];
@@ -406,7 +411,7 @@
 
         link.setAttribute('type', 'text/css');
         link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', '/css/style.css');
+        link.setAttribute('href', '//html5music.herokuapp.com/css/style.css');
 
         link.addEventListener('load', function () {
             setTime(0);
@@ -459,15 +464,48 @@
         container.appendChild(controls);
     }
 
+    function getMaxSizeNeeded(canvas, effect) {
+        switch(effect.position) {
+        case 'topright':
+        case 'topleft':
+        case 'bottomright':
+        case 'bottomleft':
+        case 'horizontalright':
+        case 'horizontalleft':
+            return canvas.clientWidth / effect.size;
+        case 'topmirror':
+        case 'bottommirror':
+        case 'horizontalmirror':
+            return canvas.clientWidth / effect.size / 2;
+        case 'leftdown':
+        case 'leftup':
+        case 'rightdown':
+        case 'rightup':
+        case 'verticaldown':
+        case 'verticalup':
+            return canvas.clientHeight / effect.size;
+        case 'leftmirror':
+        case 'rightmirror':
+        case 'verticalmirror':
+            return canvas.clientHeight / effect.size / 2;
+        case 'horizontal':
+            return canvas.clientWidth;
+        case 'vertical':
+            return canvas.clientHeight;
+        }
+    }
+
     function Visualizer() {
         var self = this,
             i,
-            canvas;
+            canvas,
+            effect;
 
         self.audioanalyser = new AudioAnalyser();
         self.timeout = null;
         self.canvases = [];
         self.contexts = [];
+        self.sizes = new Array(settings.effects.length);
         self.container = document.createElement('div');
         self.container.classList.add('music');
         self.container.setAttribute('style', settings.container);
@@ -476,16 +514,20 @@
 
         for(i = 0; i < settings.effects.length; i++) {
             canvas = document.createElement('canvas');
+            effect = settings.effects[i];
+
             self.canvases.push(canvas);
-            canvas.setAttribute('style', settings.effects[i].style);
+            canvas.setAttribute('style', effect.style);
             self.container.appendChild(canvas);
             self.contexts.push(canvas.getContext('2d'));
-            resize((function (canvas) {
+
+            resize((function (canvas, effect, i) {
                 return function () {
                     canvas.width = canvas.clientWidth;
                     canvas.height = canvas.clientHeight;
+                    self.sizes[i] = getMaxSizeNeeded(canvas, effect);
                 };
-            }(canvas)));
+            }(canvas, effect, i)));
         }
 
         makeControls(self.audioanalyser, self.container);
@@ -524,8 +566,10 @@
         }
 
         var analyser = this.audioanalyser.analyser,
-            timeData = new Uint8Array(analyser.fftSize),
-            freqData = new Uint8Array(analyser.frequencyBinCount),
+            timeSize = Math.min(analyser.fftSize, Math.max.apply(Math, this.sizes)),
+            freqSize = Math.min(analyser.frequencyBinCount, Math.max.apply(Math, this.sizes)),
+            timeData = new Uint8Array(timeSize),
+            freqData = new Uint8Array(freqSize),
             i;
 
         analyser.getByteTimeDomainData(timeData);
